@@ -13,9 +13,6 @@ return {
 
       require("dapui").setup()
 
-      vim.keymap.set("n", "<space>b", dap.toggle_breakpoint)
-      vim.keymap.set("n", "<space>gb", dap.run_to_cursor)
-
       -- Eval var under cursor
       vim.keymap.set("", "<space><space>?", function()
         require("dapui").eval(nil, { enter = true })
@@ -33,13 +30,13 @@ return {
           name = "launch - netcoredbg",
           request = "launch",
           program = function()
-            return vim.fn.input('Path to dll', vim.fn.getcwd() .. '/bin/Debug/', 'file')
+            return vim.fn.input('Path to dll: ', vim.fn.getcwd() .. '/bin/Debug/net', 'file')
           end,
         }
       }
 
       vim.keymap.set("n", "<space>b", dap.toggle_breakpoint)
-      vim.keymap.set("n", "<space>gb", dap.run_to_cursor)
+      vim.keymap.set("n", "<space>rb", dap.run_to_cursor)
 
       vim.keymap.set("n", "<F1>", dap.continue)
       vim.keymap.set("n", "<F2>", dap.step_into)
