@@ -13,8 +13,8 @@ return {
 
       require("dapui").setup()
 
-      vim.keymap.set("t", "<space>b", dap.toggle_breakpoint)
-      vim.keymap.set("t", "<space>gb", dap.run_to_cursor)
+      vim.keymap.set("n", "<space>b", dap.toggle_breakpoint)
+      vim.keymap.set("n", "<space>gb", dap.run_to_cursor)
 
       -- Eval var under cursor
       vim.keymap.set("", "<space><space>?", function()
@@ -35,7 +35,7 @@ return {
           program = function()
             return vim.fn.input('Path to dll', vim.fn.getcwd() .. '/bin/Debug/', 'file')
           end,
-        },
+        }
       }
 
       vim.keymap.set("n", "<space>b", dap.toggle_breakpoint)
@@ -47,6 +47,14 @@ return {
       vim.keymap.set("n", "<F4>", dap.step_out)
       vim.keymap.set("n", "<F5>", dap.step_back)
       vim.keymap.set("n", "<F6>", dap.restart)
+
+      vim.fn.sign_define('DapBreakpoint',
+        {
+          text = 'b',
+          texthl = 'DapBreakpointSymbol',
+          linehl = 'DapBreakpoint',
+          numhl = 'DapBreakpoint'
+        })
 
       dap.listeners.before.attach.dapui_config = function()
         ui.open()
