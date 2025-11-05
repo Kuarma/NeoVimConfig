@@ -13,10 +13,9 @@ return {
 
       require("dapui").setup()
 
-      -- Eval var under cursor
-      vim.keymap.set("", "<space><space>?", function()
+      K("", "<space><space>?", function()
         require("dapui").eval(nil, { enter = true })
-      end)
+      end, { desc = "Inspect var under cursor" })
 
       dap.adapters.coreclr = {
         type = 'executable',
@@ -35,15 +34,15 @@ return {
         }
       }
 
-      vim.keymap.set("n", "<space>b", dap.toggle_breakpoint)
-      vim.keymap.set("n", "<space>rb", dap.run_to_cursor)
+      K("n", "<space>b", dap.toggle_breakpoint, { desc = "Toggle breakpoint" })
+      K("n", "<space>rb", dap.run_to_cursor, { desc = "Run to cursor" })
 
-      vim.keymap.set("n", "<F1>", dap.continue)
-      vim.keymap.set("n", "<F2>", dap.step_into)
-      vim.keymap.set("n", "<F3>", dap.step_over)
-      vim.keymap.set("n", "<F4>", dap.step_out)
-      vim.keymap.set("n", "<F5>", dap.step_back)
-      vim.keymap.set("n", "<F6>", dap.restart)
+      K("n", "<F1>", dap.continue, { desc = "Debug: Continue" })
+      K("n", "<F2>", dap.step_into, { desc = "Debug: Step into" })
+      K("n", "<F3>", dap.step_over, { desc = "Debug: Step over" })
+      K("n", "<F4>", dap.step_out, { desc = "Debug: Step out" })
+      K("n", "<F5>", dap.step_back, { desc = "Debug: Step back" })
+      K("n", "<F6>", dap.restart, { desc = "Debug: Restart" })
 
       vim.fn.sign_define('DapBreakpoint',
         {
