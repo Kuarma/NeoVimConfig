@@ -1,4 +1,3 @@
-local utils = require('valera.utils')
 --TODO: switch all `K`s to whichkey
 -- Notes for all mappings:
 -- 1) never use ':lua', instead use '<cmd>lua', for ':lua' forces us to normal mode.
@@ -37,15 +36,6 @@ K("n", "<A-r>", "V:m '>+1<cr>gv=gv", { desc = "Move line down" })
 K("n", "<A-n>", "V:m '>-2<cr>gv=gv", { desc = "Move line up" })
 K("i", "<A-r>", "<Esc>V:m '>+1<cr>gv=gv", { desc = "Move line down" })
 K("i", "<A-n>", "<Esc>V:m '>-2<cr>gv=gv", { desc = "Move line up" })
-
--- -- Consequences
-K("n", "n", "nzzzv", { desc = "Next search (centered)", overwrite = true })
-K("n", "N", "Nzzzv", { desc = "Prev search (centered)", overwrite = true })
-
---K("n", "N", "*Ncgn", { desc = "Change next word", silent = true, overwrite = true })
---K("", "l", "t", { desc = "Till char", overwrite = true })
---
---,}}}
 
 -- Windows {{{
 
@@ -259,22 +249,10 @@ local function forceGoFile()
 end
 K("n", "<Space>gf", forceGoFile, { desc = "Go to file (create if missing)" });
 
--- nuget:
-
-
 --K("", "<M-o>", "<C-o>zt", { desc = "Jump back (top)", overwrite = true })
 K("", "<M-i>", "<C-i>zt", { desc = "Jump forward (top)" })
 --K("", "<C-o>", "<C-o>zz", { desc = "Jump back (center)", overwrite = true })
 --K("", "<C-i>", "<C-i>zz", { desc = "Jump forward (center)", overwrite = true })
-
--- -- Built-in Terminal (complete shit btw, hardly a reason to use it)
-K("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
-K("t", "<Esc>", "<C-\\><C-n>")
-K("t", "<C-w>s", "<C-\\><C-N><C-w>h", { desc = "Win left from terminal" })
-K("t", "<C-w>r", "<C-\\><C-N><C-w>j", { desc = "Win down from terminal" })
-K("t", "<C-w>n", "<C-\\><C-N><C-w>k", { desc = "Win up from terminal" })
-K("t", "<C-w>t", "<C-\\><C-N><C-w>l", { desc = "Win right from terminal" })
-
 
 local function copyFileLineCol()
 	local file = vim.fn.expand('%')

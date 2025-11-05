@@ -35,8 +35,7 @@ return require('lazy').setup({
 	{ import = "valera.plugins.signature" },
 	{ import = "valera.plugins.oil" },
 	{ import = "valera.plugins.webdevicons" },
-	{
-	},
+	{ import = "valera.plugins.dap" },
 	{ -- https://github.com/tpope/vim-abolish/blob/master/doc/abolish.txt
 		'tpope/vim-abolish',
 		keys = {
@@ -73,6 +72,9 @@ return require('lazy').setup({
 		},
 		build = false,
 	},
+	{ -- C#
+		"rcarriga/nvim-dap-ui", dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" }
+	},
 	{ -- Colorschemes
 		{ 'rose-pine/neovim',      name = 'rose-pine' },
 		{ "catppuccin/nvim",       name = "catppuccin" },
@@ -98,7 +100,16 @@ return require('lazy').setup({
 		"nvim-telescope/telescope-ui-select.nvim",
 		deps = { "echasnovski/mini.icons" },
 	},
-	"mason-org/mason.nvim",
+	{
+		"mason-org/mason.nvim",
+		ui = {
+			icons = {
+				package_installed = "✓",
+				package_pending = "➜",
+				package_uninstalled = "✗"
+			}
+		}
+	},
 	"nvim-lua/popup.nvim",
 	"folke/persistence.nvim",
 	"folke/todo-comments.nvim",
