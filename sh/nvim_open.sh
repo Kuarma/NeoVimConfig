@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # nvim shortcut, that does cd first, to allow for harpoon to detect project directory correctly
 # e stands for editor
@@ -17,20 +17,19 @@ e() {
     local full_command="${nvim_evocation} ."
     if [ -n "$1" ]; then
         if [ -d "$1" ]; then
-            pushd ${1} &> /dev/null
+            pushd "$1" >/dev/null 2>&1
             shift
             full_command="${nvim_evocation} ${@} ."
         else
-            local could_fix=0
             local try_extensions=("" ".sh" ".rs" ".go" ".py" ".json" ".txt" ".md" ".typ" ".tex" ".html" ".js" ".toml" ".conf")
-            for i in {0..${#try_extensions[@] - 1}}; do
-                local try_path="${0}${try_extensions[$i]}"
+            for ((i=0; i<${#try_extensions[@]}; i++)); do
+                local try_path="${1}${try_extensions[$i]}"
                 if [ -f "$try_path" ]; then
-                    pushd $(dirname $try_path) &> /dev/null
+                    pushd "$(dirname "$try_path")" >/dev/null 2>&1
                     shift
-                    full_command="${nvim_evocation} $(basename $try_path) ${@} ${nvim_commands}"
-                    eval ${full_command}
-                    popd &> /dev/null
+                    full_command="${nvim_evocation} $(basename "$try_path") ${@} ${nvim_commands}"
+                    eval "${full_command}"
+                    popd >/dev/null 2>&1
                     return 0
                 fi
             done
@@ -39,15 +38,8 @@ e() {
     fi
 
     full_command+=" ${nvim_commands}"
-    eval ${full_command}
+    eval "${full_command}"
 
-    # clean the whole dir stack, which would drop back if `pushd` was executed, and do nothing otherwise.
-    # hopefuly I'm not breaking anything by doing so.
-    while [ "$(dirs -v | wc -l)" -gt 1 ]; do popd; done > /dev/null 2>&1
-
-    
-    #if [ "$git_push_after" = "true" ]; then
-    #    push ${1}
-    #fi
+    while [ "$(dirs -v | wc -l)" -gt 1 ]; do popd; done >/dev/null 2>&1
 }
-e ${@}
+e "${@}"

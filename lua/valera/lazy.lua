@@ -31,6 +31,7 @@ return require('lazy').setup({
 			"JoosepAlviste/nvim-ts-context-commentstring",
 		},
 	},
+	{ import = "valera.plugins.nuget" },
 	{ import = "valera.plugins.signature" },
 	{ import = "valera.plugins.oil" },
 	{ import = "valera.plugins.webdevicons" },
@@ -47,7 +48,6 @@ return require('lazy').setup({
 	-- similar to helix's match
 	"wellle/targets.vim",
 	{ import = "valera.plugins.cmp" },
-	{ import = "valera.plugins.dap" },
 	{ -- Lsp
 		'VonHeikemen/lsp-zero.nvim',
 		branch = 'v3.x',
