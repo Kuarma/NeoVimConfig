@@ -215,6 +215,7 @@ vim.lsp.config('csharp_ls', {
 	settings = {
 		csharp = {
 			AutomaticWorkspaceInit = true,
+			
 		},
 	},
 })
