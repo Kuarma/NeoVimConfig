@@ -5,7 +5,7 @@
 local o = vim.opt
 local g = vim.g
 
-o.clipboard = "unnamedplus"
+--o.clipboard = "unnamedplus"
 o.wrap = false
 o.splitright = true
 o.splitbelow = true

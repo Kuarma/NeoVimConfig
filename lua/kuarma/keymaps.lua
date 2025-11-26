@@ -6,6 +6,7 @@
 vim.g.mapleader = " "
 
 -- ==========================================================
--- Oil
+-- Plugins
 -- ==========================================================
 vim.keymap.set({ "n", "v" }, "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+vim.keymap.set({ "n", "v" }, "<c-h>", "<CMD>TmuxNavigateLeft<CR>", { desc = "Tmux navigate left" })
