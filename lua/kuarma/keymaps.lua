@@ -50,6 +50,7 @@ set("n", "<Space><Space>n", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left
 --stylua: ignore end
 
 -- Oil
+-- Test
 set({ "n", "v" }, "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 -- Copy & Paste
