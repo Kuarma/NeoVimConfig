@@ -5,12 +5,6 @@ if cmp_ok then
 	capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 end
 
-capabilities.offsetEncoding = {
-	"utf-16",
-	"utf-8",
-	"utf-32",
-}
-
 vim.lsp.config("*", {
 	capabilities = capabilities,
 })
