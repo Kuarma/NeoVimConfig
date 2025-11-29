@@ -1,8 +1,3 @@
--- ==========================================================
--- Keymap configuration of kuarma
--- https://github.com/Kuarma/NeoVimConfig
--- ==========================================================
-
 local set = vim.keymap.set
 
 -- ==========================================================
@@ -45,7 +40,7 @@ vim.g.mapleader = " "
 -- General
 set({ "n", "v", "i" }, "<C-a>", select_all, { desc = "select all" })
 --stylua: ignore start
-set("n", "<Space><Space>n", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", { desc = "Substitute word in current buffer" }
+set("n", "<leader><leader>n", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", { desc = "Substitute word in current buffer" }
 )
 --stylua: ignore end
 
@@ -56,15 +51,15 @@ set({ "n", "v" }, "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 set({ "v", "n" }, "<C-c>", '"+y', { desc = "Yank to clipboard" })
 set("n", "<C-c>", '"+Y', { desc = "Yank line to clipboard" })
 set("v", "<C-x>", '"+ygv"_d', { desc = "Cut to clipboard" })
-set("n", "<Space>p", '"+p', { desc = "paste from system clipboard" })
+set("n", "<leader>p", '"+p', { desc = "paste from system clipboard" })
 
 -- Tabs
 set("n", "<A-h>", "<Esc>gT", { desc = "Tab prev" })
-set("n", "<A-l>", "<Esc>gt", { desc = "Tab next" })
 set("n", "<A-v>", "<Esc>g<Tab>", { desc = "Tab last visited" })
+set("n", "<A-l>", "<Esc>gt", { desc = "Tab next" })
 set("n", "<A-0>", "<Esc><cmd>tablast<cr>", { desc = "Tab last" })
-set("n", "<space>.", "<cmd>tabe .<cr>", { desc = "Open . in new tab" })
-set("n", "<space>,", "<cmd>tab sb<cr>", { desc = "Open current buffer in a new tab" })
+set("n", "<leader>.", "<cmd>tabe .<cr>", { desc = "Open . in new tab" })
+set("n", "<leader>,", "<cmd>tab sb<cr>", { desc = "Open current buffer in a new tab" })
 set({ "i", "n" }, "<A-u>", "<Esc><cmd>tabmove -<cr>", { desc = "Tab move left" })
 set({ "i", "n" }, "<A-y>", "<Esc><cmd>tabmove +<cr>", { desc = "Tab move right" })
 set({ "i", "n" }, "<A-U>", "<Esc><cmd>tabmove 0<cr>", { desc = "Tab move first" })
