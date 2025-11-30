@@ -39,9 +39,18 @@ vim.g.mapleader = " "
 
 -- General
 set({ "n", "v", "i" }, "<C-a>", select_all, { desc = "select all" })
+
 --stylua: ignore start
-set("n", "<leader><leader>n", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", { desc = "Substitute word in current buffer" }
-)
+set("n", "<space>gD", vim.lsp.buf.declaration, { desc = "Declaration" })
+set("n", "<space>gt", vim.lsp.buf.type_definition, { desc = "Type Definition" })
+set("n", "<space>gr", vim.lsp.buf.references, { desc = "List references" })
+set("n", "<C-e>n", function()	vim.diagnostic.jump({count=1, float=true}) end, {  desc = "Go to next error" })
+set("n", "<C-e>p", function()	vim.diagnostic.jump({count=-1, float=true}) end, { desc = "Go to previous error" })
+set("n", "K", vim.lsp.buf.hover, { desc = "Hover info" })
+set("n", "gd", function()	vim.lsp.buf.definition() end, { desc = "Go to definition" })
+set("n", "gI", function()	vim.lsp.buf.implementation() end, { desc = "Go to implementation" })
+set("n", "<leader><leader>n", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", { desc = "Substitute word in current buffer" })
+set({ "n", "v" }, "<leader>r", function()	vim.lsp.buf.rename() end, { desc = "Global rename" })
 --stylua: ignore end
 
 -- Oil
@@ -52,6 +61,10 @@ set({ "v", "n" }, "<C-c>", '"+y', { desc = "Yank to clipboard" })
 set("n", "<C-c>", '"+Y', { desc = "Yank line to clipboard" })
 set("v", "<C-x>", '"+ygv"_d', { desc = "Cut to clipboard" })
 set("n", "<leader>p", '"+p', { desc = "paste from system clipboard" })
+
+-- Quickfix
+set("n", "<C-q>n", "<cmd>cnext<cr>", { desc = "Quickfix: next" })
+set("n", "<C-q>p", "<cmd>cprevious<cr>", { desc = "Quickfix: previous" })
 
 -- Tabs
 set("n", "<A-h>", "<Esc>gT", { desc = "Tab prev" })
@@ -96,3 +109,6 @@ set("n", "<C-w>o", "<C-w><C-s><C-w>w", { desc = "windows: new horizontal" })
 set("n", "<C-w>O", "<C-w><C-v>", { desc = "windows: new vertical" })
 
 set("n", "<C-w>t", move_to_new_tab, { desc = "windows: move to new tab" })
+
+-- Lua
+set("v", "<leader><leader>lx", ":lua<CR>", { desc = "Lua: Run sleected lua code" })
