@@ -41,9 +41,9 @@ vim.g.mapleader = " "
 set({ "n", "v", "i" }, "<C-a>", select_all, { desc = "select all" })
 
 --stylua: ignore start
-set("n", "<space>gD", vim.lsp.buf.declaration, { desc = "Declaration" })
-set("n", "<space>gt", vim.lsp.buf.type_definition, { desc = "Type Definition" })
-set("n", "<space>gr", vim.lsp.buf.references, { desc = "List references" })
+set("n", "<leader>gD", vim.lsp.buf.declaration, { desc = "Declaration" })
+set("n", "<leader>gt", vim.lsp.buf.type_definition, { desc = "Type Definition" })
+set("n", "<leader>gr", vim.lsp.buf.references, { desc = "List references" })
 set("n", "<C-e>n", function()	vim.diagnostic.jump({count=1, float=true}) end, {  desc = "Go to next error" })
 set("n", "<C-e>p", function()	vim.diagnostic.jump({count=-1, float=true}) end, { desc = "Go to previous error" })
 set("n", "K", vim.lsp.buf.hover, { desc = "Hover info" })

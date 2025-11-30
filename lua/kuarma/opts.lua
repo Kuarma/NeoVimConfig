@@ -5,6 +5,8 @@
 local o = vim.opt
 local g = vim.g
 
+vim.opt.background = "dark"
+
 --o.clipboard = "unnamedplus"
 o.wrap = false
 o.splitright = true
