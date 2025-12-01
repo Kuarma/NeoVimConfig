@@ -2,6 +2,10 @@ return {
 	{
 		"mason-org/mason.nvim",
 		opts = {
+			registries = {
+				"github:mason-org/mason-registry",
+				"github:Crashdummyy/mason-registry",
+			},
 			ui = {
 				icons = {
 					package_installed = "✓",
@@ -13,12 +17,11 @@ return {
 	},
 	{
 		"mason-org/mason-lspconfig.nvim",
-		opts = {},
+		opts = {
+			automatic_enable = true,
+		},
 		dependencies = {
-			{
-				"mason-org/mason.nvim",
-				opts = {},
-			},
+			"mason-org/mason.nvim",
 			"neovim/nvim-lspconfig",
 		},
 	},

@@ -100,15 +100,8 @@ set("n", "<C-w>j", "<cmd>wincmd J<cr>", { desc = "windows: move window down" })
 set("n", "<C-w>k", "<cmd>wincmd K<cr>", { desc = "windows: move window up" })
 set("n", "<C-w>l", "<cmd>wincmd L<cr>", { desc = "windows: move window right" })
 
-set("n", "<C-Right>", "<cmd>vertical resize -2<cr>", { desc = "windows: decrease width" })
-set("n", "<C-Left>", "<cmd>vertical resize +2<cr>", { desc = "windows: increase width" })
-set("n", "<C-Down>", "<cmd>resize +2<cr>", { desc = "windows: decrease height" })
-set("n", "<C-Up>", "<cmd>resize -2<cr>", { desc = "windows: increase height" })
-
 set("n", "<C-w>o", "<C-w><C-s><C-w>w", { desc = "windows: new horizontal" })
 set("n", "<C-w>O", "<C-w><C-v>", { desc = "windows: new vertical" })
-
-set("n", "<C-w>t", move_to_new_tab, { desc = "windows: move to new tab" })
 
 -- Lua
 set("v", "<leader><leader>lx", ":lua<CR>", { desc = "Lua: Run sleected lua code" })
