@@ -36,7 +36,12 @@ return {
 		math.randomseed(os.time())
 
 		local function pick_color()
-			local colors = { "String", "Identifier", "Keyword", "Number" }
+			local colors = {
+				"String",
+				"Identifier",
+				"Keyword",
+				"Number",
+			}
 			return colors[math.random(#colors)]
 		end
 
