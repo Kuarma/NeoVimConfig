@@ -10,7 +10,7 @@ return {
 			preset = "default",
 			["<S-tab>"] = { "select_prev", "fallback" },
 			["<Tab>"] = { "select_next", "fallback" },
-			["<C-e>"] = { "show", "show_documentation", "hide_documentation" },
+			["<C-s>"] = { "show", "show_documentation", "hide_documentation" },
 			["<A-space>"] = {
 				function(cmp)
 					cmp.show({ providers = { "snippets" } })

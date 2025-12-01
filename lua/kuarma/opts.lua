@@ -5,7 +5,8 @@
 local o = vim.opt
 local g = vim.g
 
-vim.opt.background = "dark"
+o.spell = true
+o.spelllang = "en_us"
 
 --o.clipboard = "unnamedplus"
 o.wrap = false
