@@ -17,9 +17,6 @@ return {
 				end,
 			},
 		},
-		appearance = {
-			nerd_font_variant = "normal",
-		},
 		cmdline = {
 			completion = {
 				menu = {
@@ -59,9 +56,19 @@ return {
 		sources = {
 			default = {
 				"lsp",
+				"easy-dotnet",
 				"path",
 				"snippets",
 				"buffer",
+			},
+			providers = {
+				["easy-dotnet"] = {
+					name = "easy-dotnet",
+					enabled = true,
+					module = "easy-dotnet.completion.blink",
+					score_offset = 1000,
+					async = true,
+				},
 			},
 		},
 		fuzzy = {
@@ -70,7 +77,7 @@ return {
 				"score",
 				"sort_text",
 			},
-			implementation = "prefer_rust",
+			implementation = "prefer_rust_with_warning",
 		},
 		signature = {
 			enabled = true,
