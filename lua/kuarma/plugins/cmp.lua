@@ -36,13 +36,42 @@ return {
 		},
 
 		appearance = {
+			use_nvim_cmp_as_default = true,
 			nerd_font_variant = "mono",
+			kind_icons = {
+				Text = "",
+				Method = "󰆧",
+				Function = "󰊕",
+				Constructor = "",
+				Field = "󰜢",
+				Variable = "",
+				Class = "󰠱",
+				Interface = "",
+				Module = "",
+				Property = "",
+				Unit = "",
+				Value = "󰎠",
+				Enum = "ℰ",
+				Keyword = "󰌋",
+				Snippet = "",
+				Color = "󱥚",
+				File = "󰈙",
+				Reference = "",
+				Folder = "󰉋",
+				EnumMember = "",
+				Constant = "",
+				Struct = "𝓢",
+				Event = "",
+				Operator = "󱓉",
+				TypeParameter = "󰬛",
+			},
 		},
 
 		cmdline = {
 			keymap = {
 				preset = "inherit",
 			},
+
 			completion = {
 				menu = {
 					auto_show = true,
@@ -72,6 +101,9 @@ return {
 			},
 
 			menu = {
+				border = "rounded",
+				winblend = 0,
+				scrollbar = false,
 				draw = {
 					columns = {
 						{
@@ -102,6 +134,11 @@ return {
 
 			documentation = {
 				auto_show = true,
+				window = {
+					border = "rounded",
+					winblend = 0,
+					scrollbar = true,
+				},
 			},
 
 			ghost_text = {
@@ -128,7 +165,14 @@ return {
 			},
 		},
 
-		signature = { enabled = true },
+		signature = {
+			enabled = true,
+			window = {
+				border = "rounded",
+				winblend = 0,
+				scrollbar = false,
+			},
+		},
 
 		fuzzy = {
 			implementation = "prefer_rust_with_warning",
