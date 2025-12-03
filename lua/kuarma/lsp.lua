@@ -18,6 +18,7 @@ vim.diagnostic.config({
 		spacing = 2,
 		prefix = "⋆",
 	},
+
 	severity_sort = true,
 	update_in_insert = true,
 })

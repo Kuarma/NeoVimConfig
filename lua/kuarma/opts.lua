@@ -3,16 +3,15 @@
 -----------------------------------------------------------
 
 local o = vim.opt
-local g = vim.g
-
-o.spell = true
-o.spelllang = "en_us"
 
 --o.clipboard = "unnamedplus"
 o.wrap = false
 o.splitright = true
 o.splitbelow = true
 o.showtabline = 2
+
+o.colorcolumn = "80"
+o.termguicolors = true
 
 o.relativenumber = false
 o.number = true
@@ -28,17 +27,25 @@ o.incsearch = true
 o.ignorecase = true
 o.smartcase = true
 
-o.tabstop = 2
-o.softtabstop = 0
-o.shiftwidth = 2
-o.expandtab = false
+o.tabstop = 4
+o.softtabstop = 4
+o.shiftwidth = 4
+o.expandtab = true
 o.smartindent = true
-g.autoformat = true
 
-o.sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp" }
+o.sessionoptions = {
+	"buffers",
+	"curdir",
+	"tabpages",
+	"winsize",
+	"help",
+	"globals",
+	"skiprtp",
+}
 
-o.scrolloff = 5
+o.scrolloff = 8
 o.signcolumn = "yes"
+vim.opt.isfname:append("@-@")
 
 o.updatetime = 50
 
@@ -51,8 +58,3 @@ o.modifiable = true
 
 o.showmatch = true
 o.joinspaces = false
-
-o.spelloptions = "camel"
-o.spellcapcheck = ""
-
-o.spellfile = os.getenv("HOME") .. "/.config/nvim/spell/en.utf-8.add"
