@@ -62,6 +62,9 @@ set("n", "<C-c>", '"+Y', { desc = "Yank line to clipboard" })
 set("v", "<C-x>", '"+ygv"_d', { desc = "Cut to clipboard" })
 set("n", "<leader>p", '"+p', { desc = "paste from system clipboard" })
 
+-- Undotree
+set("n", "<leader>u", "<Cmd>:UndotreeToggle<CR>", { desc = "Toggle Undotree" })
+
 -- Quickfix
 set("n", "<C-q>n", "<cmd>cnext<cr>", { desc = "Quickfix: next" })
 set("n", "<C-q>p", "<cmd>cprevious<cr>", { desc = "Quickfix: previous" })

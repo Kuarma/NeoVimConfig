@@ -27,6 +27,7 @@ return {
 			["<S-tab>"] = { "select_prev", "fallback" },
 			["<Tab>"] = { "select_next", "fallback" },
 			["<C-s>"] = { "show", "show_documentation", "hide_documentation" },
+			["<C-k>"] = { "show_signature", "hide_signature", "fallback" },
 			["<A-space>"] = {
 				function(cmp)
 					cmp.show({ providers = { "snippets" } })
@@ -39,6 +40,9 @@ return {
 		},
 
 		cmdline = {
+			keymap = {
+				preset = "inherit",
+			},
 			completion = {
 				menu = {
 					auto_show = true,
@@ -128,6 +132,11 @@ return {
 
 		fuzzy = {
 			implementation = "prefer_rust_with_warning",
+			sorts = {
+				"score",
+				"sort_text",
+				"label",
+			},
 		},
 	},
 
