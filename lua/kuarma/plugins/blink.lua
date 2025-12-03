@@ -1,11 +1,27 @@
 return {
 	"saghen/blink.cmp",
-	dependencies = { "rafamadriz/friendly-snippets" },
+	dependencies = {
+		"rafamadriz/friendly-snippets",
+		"xzbdmw/colorful-menu.nvim",
+	},
+
 	version = "1.*",
 
 	---@module 'blink.cmp'
 	---@type blink.cmp.Config
 	opts = {
+		-- 'default' (recommended) for mappings similar to built-in completions (C-y to accept)
+		-- 'super-tab' for mappings similar to vscode (tab to accept)
+		-- 'enter' for enter to accept
+		-- 'none' for no mappings
+		--
+		-- All presets have the following mappings:
+		-- C-space: Open menu or open docs if already open
+		-- C-n/C-p or Up/Down: Select next/previous item
+		-- C-e: Hide menu
+		-- C-k: Toggle signature help (if signature.enabled = true)
+		--
+		-- See :h blink-cmp-config-keymap for defining your own keymap
 		keymap = {
 			preset = "default",
 			["<S-tab>"] = { "select_prev", "fallback" },
@@ -17,71 +33,105 @@ return {
 				end,
 			},
 		},
+
+		appearance = {
+			nerd_font_variant = "mono",
+		},
+
 		cmdline = {
 			completion = {
 				menu = {
 					auto_show = true,
 				},
 			},
+
+			enabled = true,
 		},
+
 		completion = {
-			trigger = {
-				show_on_trigger_character = true,
+			keyword = {
+				range = "full",
 			},
-			ghost_text = {
-				enabled = true,
+
+			accept = {
+				auto_brackets = {
+					enabled = true,
+				},
 			},
+
+			list = {
+				selection = {
+					preselect = false,
+
+					auto_insert = true,
+				},
+			},
+
 			menu = {
-				auto_show = true,
 				draw = {
 					columns = {
 						{
 							"label",
-							"label_description",
 							gap = 1,
 						},
 						{
 							"kind_icon",
 							"kind",
-							gap = 1,
+							gap = 2,
+						},
+					},
+
+					components = {
+						label = {
+							text = function(ctx)
+								return require("colorful-menu").blink_components_text(ctx)
+							end,
+							highlight = function(ctx)
+								return require("colorful-menu").blink_components_highlight(ctx)
+							end,
 						},
 					},
 				},
-				border = "single",
+
+				auto_show = true,
 			},
+
 			documentation = {
 				auto_show = true,
 			},
+
+			ghost_text = {
+				enabled = true,
+			},
 		},
+
 		sources = {
 			default = {
 				"lsp",
 				"easy-dotnet",
 				"path",
 				"snippets",
-				"buffer",
 			},
+
 			providers = {
 				["easy-dotnet"] = {
 					name = "easy-dotnet",
 					enabled = true,
 					module = "easy-dotnet.completion.blink",
-					score_offset = 1000,
+					score_offset = 10000,
 					async = true,
 				},
 			},
 		},
+
+		signature = { enabled = true },
+
 		fuzzy = {
-			sorts = {
-				"exact",
-				"score",
-				"sort_text",
-			},
 			implementation = "prefer_rust_with_warning",
 		},
-		signature = {
-			enabled = true,
-		},
 	},
-	opts_extend = { "sources.default" },
+
+	opts_extend = {
+		"sources.default",
+	},
 }
