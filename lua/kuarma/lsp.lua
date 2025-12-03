@@ -16,7 +16,6 @@ vim.lsp.config("*", {
 vim.diagnostic.config({
 	virtual_text = {
 		spacing = 2,
-		prefix = "⋆",
 	},
 
 	severity_sort = true,

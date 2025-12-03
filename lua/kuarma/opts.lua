@@ -1,17 +1,14 @@
 -----------------------------------------------------------
 -- General Neovim settings and configuration
 -----------------------------------------------------------
-
 local o = vim.opt
 
 --o.clipboard = "unnamedplus"
+o.termguicolors = true
 o.wrap = false
 o.splitright = true
 o.splitbelow = true
 o.showtabline = 2
-
-o.colorcolumn = "80"
-o.termguicolors = true
 
 o.relativenumber = false
 o.number = true

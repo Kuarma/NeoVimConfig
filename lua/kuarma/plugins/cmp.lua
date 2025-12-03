@@ -152,6 +152,7 @@ return {
 				"easy-dotnet",
 				"path",
 				"snippets",
+				"buffer",
 			},
 
 			providers = {
