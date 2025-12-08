@@ -4,24 +4,10 @@ return {
 		"rafamadriz/friendly-snippets",
 		"xzbdmw/colorful-menu.nvim",
 	},
-
 	version = "1.*",
-
 	---@module 'blink.cmp'
 	---@type blink.cmp.Config
 	opts = {
-		-- 'default' (recommended) for mappings similar to built-in completions (C-y to accept)
-		-- 'super-tab' for mappings similar to vscode (tab to accept)
-		-- 'enter' for enter to accept
-		-- 'none' for no mappings
-		--
-		-- All presets have the following mappings:
-		-- C-space: Open menu or open docs if already open
-		-- C-n/C-p or Up/Down: Select next/previous item
-		-- C-e: Hide menu
-		-- C-k: Toggle signature help (if signature.enabled = true)
-		--
-		-- See :h blink-cmp-config-keymap for defining your own keymap
 		keymap = {
 			preset = "default",
 			["<S-tab>"] = { "select_prev", "fallback" },
@@ -34,7 +20,6 @@ return {
 				end,
 			},
 		},
-
 		appearance = {
 			use_nvim_cmp_as_default = true,
 			nerd_font_variant = "mono",
@@ -66,40 +51,32 @@ return {
 				TypeParameter = "󰬛",
 			},
 		},
-
 		cmdline = {
 			keymap = {
 				preset = "inherit",
 			},
-
 			completion = {
 				menu = {
 					auto_show = true,
 				},
 			},
-
 			enabled = true,
 		},
-
 		completion = {
 			keyword = {
 				range = "full",
 			},
-
 			accept = {
 				auto_brackets = {
 					enabled = true,
 				},
 			},
-
 			list = {
 				selection = {
 					preselect = false,
-
 					auto_insert = true,
 				},
 			},
-
 			menu = {
 				border = "rounded",
 				winblend = 0,
@@ -128,10 +105,8 @@ return {
 						},
 					},
 				},
-
 				auto_show = true,
 			},
-
 			documentation = {
 				auto_show = true,
 				window = {
@@ -140,12 +115,10 @@ return {
 					scrollbar = true,
 				},
 			},
-
 			ghost_text = {
 				enabled = true,
 			},
 		},
-
 		sources = {
 			default = {
 				"lsp",
@@ -154,7 +127,6 @@ return {
 				"snippets",
 				"buffer",
 			},
-
 			providers = {
 				["easy-dotnet"] = {
 					name = "easy-dotnet",
@@ -165,7 +137,6 @@ return {
 				},
 			},
 		},
-
 		signature = {
 			enabled = true,
 			window = {
@@ -174,7 +145,6 @@ return {
 				scrollbar = false,
 			},
 		},
-
 		fuzzy = {
 			implementation = "prefer_rust_with_warning",
 			sorts = {
@@ -184,7 +154,6 @@ return {
 			},
 		},
 	},
-
 	opts_extend = {
 		"sources.default",
 	},

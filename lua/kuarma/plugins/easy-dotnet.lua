@@ -20,47 +20,6 @@ return {
 					open_variable_viewer = { lhs = "T", desc = "open variable viewer" },
 				},
 			},
-			---@type TestRunnerOptions
-			test_runner = {
-				---@type "split" | "vsplit" | "float" | "buf"
-				viewmode = "float",
-				---@type number|nil
-				vsplit_width = nil,
-				---@type string|nil "topleft" | "topright"
-				vsplit_pos = nil,
-				enable_buffer_test_execution = true,
-				noBuild = true,
-				icons = {
-					passed = "",
-					skipped = "",
-					failed = "",
-					success = "",
-					reload = "",
-					test = "",
-					sln = "󰘐",
-					project = "󰘐",
-					dir = "",
-					package = "",
-				},
-				mappings = {
-					run_test_from_buffer = { lhs = "<leader><leader>r", desc = "run test from buffer" },
-					peek_stack_trace_from_buffer = { lhs = "<leader><leader>p", desc = "peek stack trace from buffer" },
-					filter_failed_tests = { lhs = "<leader><leader>fe", desc = "filter failed tests" },
-					debug_test = { lhs = "<leader><leader>d", desc = "debug test" },
-					debug_test_from_buffer = { lhs = "<leader><leader>d", desc = "debug test" },
-					go_to_file = { lhs = "<leader><leader>g", desc = "go to file" },
-					run_all = { lhs = "<leader><leader>R", desc = "run all tests" },
-					run = { lhs = "<leader><leader>r", desc = "run test" },
-					peek_stacktrace = { lhs = "<leader><leader>p", desc = "peek stacktrace of failed test" },
-					expand = { lhs = "<leader><leader>o", desc = "expand" },
-					expand_node = { lhs = "<leader><leader>E", desc = "expand node" },
-					expand_all = { lhs = "<leader><leader>-", desc = "expand all" },
-					collapse_all = { lhs = "<leader><leader>W", desc = "collapse all" },
-					close = { lhs = "<leader><leader>q", desc = "close testrunner" },
-					refresh_testrunner = { lhs = "<leader><leader><C-r>", desc = "refresh testrunner" },
-				},
-				additional_args = {},
-			},
 			new = {
 				project = {
 					prefix = "sln",

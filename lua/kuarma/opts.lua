@@ -7,7 +7,7 @@ local o = vim.opt
 o.termguicolors = true
 o.wrap = false
 o.splitright = true
-o.splitbelow = true
+o.splitbelow = false
 o.showtabline = 2
 
 o.relativenumber = false
@@ -30,15 +30,7 @@ o.shiftwidth = 4
 o.expandtab = true
 o.smartindent = true
 
-o.sessionoptions = {
-	"buffers",
-	"curdir",
-	"tabpages",
-	"winsize",
-	"help",
-	"globals",
-	"skiprtp",
-}
+vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions,globals,skiprtp"
 
 o.scrolloff = 8
 o.signcolumn = "yes"
