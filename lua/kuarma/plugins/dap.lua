@@ -1,7 +1,34 @@
 return {
 	"mfussenegger/nvim-dap",
+	dependencies = {
+		"rcarriga/nvim-dap-ui",
+		"nvim-neotest/nvim-nio",
+		"jay-babu/mason-nvim-dap.nvim",
+	},
 	config = function()
 		local dap = require("dap")
+		local dapui = require("dapui")
+
+		dapui.setup({
+			icons = {
+				expanded = "▾",
+				collapsed = "▸",
+				current_frame = "*",
+			},
+			controls = {
+				icons = {
+					pause = "⏸",
+					play = "▶",
+					step_into = "⏎",
+					step_over = "⏭",
+					step_out = "⏮",
+					step_back = "b",
+					run_last = "▶▶",
+					terminate = "⏹",
+					disconnect = "⏏",
+				},
+			},
+		})
 
 		vim.keymap.set("n", "q", function()
 			dap.terminate()
@@ -10,6 +37,7 @@ return {
 			desc = "Terminate and clear breakpoints",
 		})
 
+		vim.keymap.set("n", "<F1>", dapui.toggle, { desc = "Toggle Debug UI" })
 		vim.keymap.set("n", "<F5>", dap.continue, { desc = "Start/continue debugging" })
 		vim.keymap.set("n", "<F2>", dap.step_over, { desc = "Step over" })
 		vim.keymap.set("n", "<F11>", dap.step_into, { desc = "Step into" })

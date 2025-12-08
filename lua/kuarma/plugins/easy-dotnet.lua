@@ -1,16 +1,17 @@
 return {
 	"GustavEikaas/easy-dotnet.nvim",
-	-- 'nvim-telescope/telescope.nvim' or 'ibhagwan/fzf-lua' or 'folke/snacks.nvim'
-	-- are highly recommended for a better experience
-	dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" },
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+		"nvim-telescope/telescope.nvim",
+	},
 	config = function()
 		local dotnet = require("easy-dotnet")
 		-- Options are not required
 		dotnet.setup({
 			lsp = {
-				enabled = true, -- Enable builtin roslyn lsp
-				roslynator_enabled = true, -- Automatically enable roslynator analyzer
-				analyzer_assemblies = {}, -- Any additional roslyn analyzers you might use like SonarAnalyzer.CSharp
+				enabled = true,
+				roslynator_enabled = true,
+				analyzer_assemblies = {},
 				config = {},
 			},
 			debugger = {
