@@ -11,7 +11,7 @@ return {
 		})
 
 		vim.keymap.set("n", "<F5>", dap.continue, { desc = "Start/continue debugging" })
-		vim.keymap.set("n", "<F10>", dap.step_over, { desc = "Step over" })
+		vim.keymap.set("n", "<F2>", dap.step_over, { desc = "Step over" })
 		vim.keymap.set("n", "<F11>", dap.step_into, { desc = "Step into" })
 		vim.keymap.set("n", "<F12>", dap.step_out, { desc = "Step out" })
 		vim.keymap.set("n", "<leader>db", dap.toggle_breakpoint, { desc = "Toggle breakpoint" })

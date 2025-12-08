@@ -25,12 +25,6 @@ local function select_all()
 	})
 end
 
-local function move_to_new_tab()
-	local current_win = vim.api.nvim_get_current_win()
-	vim.cmd("tab sb")
-	vim.api.nvim_win_close(current_win, false)
-end
-
 -- ==========================================================
 -- Mappings
 -- ==========================================================
@@ -66,8 +60,8 @@ set("n", "<leader>p", '"+p', { desc = "paste from system clipboard" })
 set("n", "<leader>u", "<Cmd>:UndotreeToggle<CR>", { desc = "Toggle Undotree" })
 
 -- Quickfix
-set("n", "<C-q>n", "<cmd>cnext<cr>", { desc = "Quickfix: next" })
-set("n", "<C-q>p", "<cmd>cprevious<cr>", { desc = "Quickfix: previous" })
+set("n", "<leader>qn", "<cmd>cnext<cr>", { desc = "Quickfix: next" })
+set("n", "<leader>qp", "<cmd>cprevious<cr>", { desc = "Quickfix: previous" })
 
 -- Tabs
 set("n", "<A-h>", "<Esc>gT", { desc = "Tab prev" })

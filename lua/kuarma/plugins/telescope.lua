@@ -10,6 +10,7 @@ return {
 		},
 		"nvim-telescope/telescope-media-files.nvim",
 		"nvim-telescope/telescope-ui-select.nvim",
+		"olimorris/persisted.nvim",
 		"nvim-telescope/telescope-dap.nvim",
 	},
 	config = function()
@@ -58,6 +59,7 @@ return {
 		vim.keymap.set("n", "<space>f", function()	builtin.find_files(gs) end, { desc = "Search files" })
 		vim.keymap.set("n", "<space>z", function()	builtin.live_grep(gs) end, { desc = "Live grep" })
 		vim.keymap.set("n", "<space>sk", function()	builtin.keymaps(gs)	end, { desc = "Keymaps" })
+		vim.keymap.set("n", "<space>sp", "<cmd>Telescope persisted<cr>", { desc = "Persisted: sessions" })
 		vim.keymap.set("n", "<space>sg", function()	builtin.git_files(gs) end, { desc = "Git files" })
 		vim.keymap.set("n", "<space>sb", function() builtin.buffers(gs)	end, { desc = "Find buffers" })
 		vim.keymap.set("n", "<space>sh", function()	builtin.help_tags(gs) end, { desc = "Neovim documentation" })
