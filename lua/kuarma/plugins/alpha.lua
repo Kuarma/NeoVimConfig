@@ -48,12 +48,12 @@ return {
 		dashboard.section.header.opts.hl = pick_color()
 
 		dashboard.section.buttons.val = {
-			dashboard.button("f", "  Find file", "<Cmd>Telescope find_files<CR>"),
+			dashboard.button("f", "  Find file", "<Cmd>Telescope live_grep<CR>"),
 			dashboard.button("n", "  New file", "<Cmd>ene<CR>"),
 			dashboard.button("r", "  Recent", "<Cmd>:Telescope oldfiles<CR>"),
 			dashboard.button("s", "  Settings", "<Cmd>:e $MYVIMRC | :cd %:p:h | split . | wincmd k | pwd<CR>"),
 			dashboard.button("p", "󰂖  Plugins", "<Cmd>Lazy<CR>"),
-			dashboard.button("l", "  Open session"),
+			dashboard.button("l", "  Open session", "<Cmd>Telescope persisted<CR>"),
 			dashboard.button("u", "  Update plugins", "<Cmd>Lazy sync<CR>"),
 			dashboard.button("q", "󰅚  Quit NVIM", ":qa<CR>"),
 		}
