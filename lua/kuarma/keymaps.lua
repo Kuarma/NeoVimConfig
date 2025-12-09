@@ -60,8 +60,8 @@ set("n", "<leader>p", '"+p', { desc = "paste from system clipboard" })
 set("n", "<leader>u", "<Cmd>:UndotreeToggle<CR>", { desc = "Toggle Undotree" })
 
 -- Quickfix
-set("n", "<leader>qn", "<cmd>cnext<cr>", { desc = "Quickfix: next" })
-set("n", "<leader>qp", "<cmd>cprevious<cr>", { desc = "Quickfix: previous" })
+set("n", "<C-n>", "<cmd>cnext<cr>", { desc = "Quickfix: next" })
+set("n", "<C-p>", "<cmd>cprevious<cr>", { desc = "Quickfix: previous" })
 
 -- Tabs
 set("n", "<A-h>", "<Esc>gT", { desc = "Tab prev" })

@@ -30,7 +30,7 @@ return {
 			},
 		})
 
-		vim.keymap.set("n", "q", function()
+		vim.keymap.set("n", "<leader>dc", function()
 			dap.terminate()
 			dap.clear_breakpoints()
 		end, {
@@ -43,7 +43,7 @@ return {
 		vim.keymap.set("n", "<F11>", dap.step_into, { desc = "Step into" })
 		vim.keymap.set("n", "<F12>", dap.step_out, { desc = "Step out" })
 		vim.keymap.set("n", "<leader>db", dap.toggle_breakpoint, { desc = "Toggle breakpoint" })
-		vim.keymap.set("n", "<leader>dO", dap.step_over, { desc = "Step over (alt)" })
+		vim.keymap.set("n", "<leader>do", dap.step_over, { desc = "Step over (alt)" })
 		vim.keymap.set("n", "<leader>dC", dap.run_to_cursor, { desc = "Run to cursor" })
 		vim.keymap.set("n", "<leader>dr", dap.repl.toggle, { desc = "Toggle DAP REPL" })
 		vim.keymap.set("n", "<leader>dj", dap.down, { desc = "Go down stack frame" })

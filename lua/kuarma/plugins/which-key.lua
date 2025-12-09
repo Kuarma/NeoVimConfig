@@ -7,7 +7,6 @@ return {
 			{ "<leader>s", group = "Telescope: Search" },
 			{ "<leader>d", group = "Debug" },
 			{ "<leader>g", group = "Go ..." },
-			{ "<leader>q", group = "Quickfix: Movement" },
 			{ "<leader>S", group = "Sessions" },
 			{ "<leader>t", group = "Todo" },
 		})
