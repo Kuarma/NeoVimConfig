@@ -9,6 +9,10 @@ local capabilities = {
 
 capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
 
+vim.fn.sign_define("DapBreakpoint", {
+	text = "📛",
+})
+
 vim.lsp.config("*", {
 	capabilities = capabilities,
 })
