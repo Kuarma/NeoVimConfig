@@ -47,6 +47,9 @@ set("n", "<leader><leader>n", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Le
 set({ "n", "v" }, "<leader>r", function()	vim.lsp.buf.rename() end, { desc = "Global rename" })
 --stylua: ignore end
 
+-- Screenkeys
+set("n", "<leader><Tab>", "<CMD>Screenkey<CR>", { desc = "Screenkey toggle" })
+
 -- Oil
 set({ "n", "v" }, "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
