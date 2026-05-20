@@ -7,6 +7,13 @@ return {
 	config = function()
 		local dotnet = require("easy-dotnet")
 
+		vim.api.nvim_set_hl(0, "LspCodeLens", {
+			fg = "#717171",
+			italic = true,
+		})
+
+		vim.keymap.set("n", "<leader>cl", vim.lsp.codelens.run, { desc = "Run CodeLens" })
+
 		dotnet.setup({
 			external_terminal = nil,
 			lsp = {
